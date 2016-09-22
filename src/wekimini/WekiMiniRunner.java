@@ -35,7 +35,7 @@ import wekimini.util.Util;
  */
 public final class WekiMiniRunner {
 
-    private static final String versionString = "9 July 2016";
+    private static final String versionString = "23 September 2016";
     private static final Logger logger = Logger.getLogger(WekiMiniRunner.class.getName());
     // private static final List<Wekinator> runningWekinators = new LinkedList<>();
     private static WekiMiniRunner ref = null; //Singleton
@@ -116,10 +116,10 @@ public final class WekiMiniRunner {
         wekinatorCurrentMainFrames.put(w, newC);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         /* Create and display the form */
         //WekiMiniRunner.isKadenze = (args.length != 0);
-        WekiMiniRunner.isKadenze = true; //KADENZE SET
+        WekiMiniRunner.isKadenze = false; //KADENZE SET
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
              UIManager.put("Slider.paintValue", false);
@@ -141,6 +141,9 @@ public final class WekiMiniRunner {
                 }
             }
         });
+        
+        WekiMiniRunner.getInstance().runFromFile("/Users/tree/Documents/Tree/Software_nixPILLE/wek_mapping1/wek_mapping1.wekproj");
+        
     }
 
     public int numRunningProjects() {

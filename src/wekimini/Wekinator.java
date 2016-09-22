@@ -32,7 +32,7 @@ import wekimini.util.Util;
  */
 public class Wekinator {
 
-    public static final String version = "v2.1.0.4";
+    public static final String version = "v2.1.0.5";
 
 //TODO: Can make more efficient by initializing some of these on demand (e.g. gui, OSC Monitor)
    // private final Settings settings;
@@ -261,6 +261,7 @@ public class Wekinator {
             }
         });
        // KadenzeLogging.getLogger().newProjectStarted(this);
+
     }
 
     private void learningTypeChanged(LearningManager.LearningType learningType) {

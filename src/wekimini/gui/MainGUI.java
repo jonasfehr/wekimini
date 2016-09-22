@@ -79,11 +79,11 @@ public class MainGUI extends javax.swing.JFrame implements Closeable {
             @Override
             public void windowClosing(WindowEvent e) {
                 //int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Quit?", JOptionPane.YES_NO_OPTION);
-                int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to close this project?", "Close project?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, WekiMiniRunner.getIcon());
+              //  int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to close this project?", "Close project?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, WekiMiniRunner.getIcon());
 
-                if (option == JOptionPane.YES_OPTION) {
+       //         if (option == JOptionPane.YES_OPTION) {
                     finishUp();
-                }
+         //       }
 
             }
         });
@@ -935,8 +935,10 @@ public class MainGUI extends javax.swing.JFrame implements Closeable {
 
     public void showOSCReceiverWindow() {
         if (oscInputStatusFrame == null) {
+            w.getOSCReceiver().startListening();
             oscInputStatusFrame = new OSCInputStatusFrame(w);
-            oscInputStatusFrame.setVisible(true);
+            oscInputStatusFrame.setVisible(false); // Set to false to avoid oscInput
+            
 
             Util.CallableOnClosed callMe = new Util.CallableOnClosed() {
                 @Override
